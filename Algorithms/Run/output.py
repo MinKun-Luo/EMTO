@@ -48,7 +48,7 @@ from Algorithms.MultiTask.MultiPopulation.NKTMTO.NKTMTO import NKTMTO # NKTMTO �
 from Algorithms.MultiTask.MultiPopulation.MGDMTO.MGDMTO import MGDMTO # MGDMTO 算法
 
 # 算法列表
-Algos = [MFEA, MFDE, MFEA_AKT, RLMFEA, EMTO_AI, MTGA, MKTDE, AEMTO, BLKT_DE, MMLMTO]
+Algos = [MFEA, MFDE, MFEA_AKT, RLMFEA, EMTO_AI, MTGA, MKTDE, AEMTO, BLKT_DE, MMLMTO, NKTMTO, MGDMTO]
 strAlgos = ['MFEA', 'MFDE', 'MFEA-AKT', 'RLMFEA', 'EMTO-AI', 'MTGA', 'MKTDE', 'AEMTO', 'BLKT-DE', 'MMLMTO', 'NKTMTO', 'MGDMTO']
 # 测试集导入
 from Problems.MultiTask.CEC17_MTSO.CEC17_MTSO import *
