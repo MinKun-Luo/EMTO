@@ -26,7 +26,7 @@ class MGDMTO(Algorithm):
         self.max_nt = 5  # 最大生产个体数量
         self.nt = np.random.randint(self.min_nt, self.max_nt + 1)  # 随机初始值
         self.F = 0.5
-        self.CR = 0.7
+        self.CR = 0.9
 
     def update_nt(self, similarity):
         """

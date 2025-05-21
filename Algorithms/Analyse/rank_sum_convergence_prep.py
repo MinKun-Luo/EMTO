@@ -3,8 +3,30 @@
 # @Author: wzb
 # @Introduction: 显著性分析和收敛图绘制的数据预处理
 # @Remind: 运行前请确保路径准确且对应算法存在相应数据
-
+import sys
 import os
+from pathlib import Path
+
+def set_project_root(target_folder_name: str = "EMTO") -> Path:
+    """
+    向上查找目标目录并切换为工作目录，同时返回该路径。
+    可用于统一将当前目录切换至项目根目录。
+
+    :param target_folder_name: 目标目录名称，默认为 "EMTO"
+    :return: 查找到的目标目录路径（Path对象）
+    :raises FileNotFoundError: 如果未找到目标目录
+    """
+    current_path = Path(__file__).resolve()
+    for parent in current_path.parents:
+        if parent.name == target_folder_name:
+            sys.path.append(str(parent))
+            os.chdir(parent)
+            return parent
+    raise FileNotFoundError(f"项目根目录 '{target_folder_name}' 未找到")
+
+
+# 自动切换到项目根目录EMTO
+project_root = set_project_root("EMTO")
 
 import pandas as pd
 from openpyxl.styles import Font, Border, Side, Alignment
@@ -23,22 +45,22 @@ file_order_22 = ['Benchmark1', 'Benchmark2', 'Benchmark3', 'Benchmark4', 'Benchm
 
 # 比较算法数据位置(该顺序决定了显著性分析和收敛图绘制的顺序，第一个为自己的算法)
 folder_paths_template = [
-    "Files/MultiTask/MMLMTO/CEC/CEC{data}/",
+    "Files/MultiTask/MGDMTO_s_CR0.7/CEC/CEC{data}/",
     "Files/MultiTask/MFEA/CEC/CEC{data}/",
-    "Files/MultiTask/MFDE/CEC/CEC{data}/",
     "Files/MultiTask/MFEA_AKT/CEC/CEC{data}/",
-    "Files/MultiTask/MKTDE/CEC/CEC{data}/",
+    "Files/MultiTask/MFDE/CEC/CEC{data}/",
     "Files/MultiTask/MTGA/CEC/CEC{data}/",
+    "Files/MultiTask/MKTDE/CEC/CEC{data}/",
     "Files/MultiTask/AEMTO/CEC/CEC{data}/",
     "Files/MultiTask/RLMFEA/CEC/CEC{data}/",
     "Files/MultiTask/EMTO_AI/CEC/CEC{data}/",
-    "Files/MultiTask/BLKT_DE/CEC/CEC{data}/"
+    "Files/MultiTask/BLKT_DE/CEC/CEC{data}/",
+    "Files/MultiTask/MMLMTO/CEC/CEC{data}/",
 ]
 # 对比算法名称(该顺序决定了显著性分析和收敛图绘制的顺序，须于上面一致)
-algos = ['MMLMTO', 'MFEA', 'MFDE', 'MFEA-AKT', 'MKTDE',
-         'MTGA', 'AEMTO', 'RLMFEA', 'EMTO-AI', 'BLKT-DE']
+algos = ['MGDMTO_s_CR0.7', 'MFEA', 'MFEA_AKT','MFDE', 'MTGA', 'MKTDE', 'AEMTO', 'RLMFEA', 'EMTO_AI', 'BLKT_DE', 'MMLMTO']
 
-file_prefix = "Files/MultiTask/MMLMTO/CEC"  # 文件前缀
+file_prefix = "Files/MultiTask/MGDMTO显著性分析/CEC"  # 文件前缀
 data_file_template = "{file_prefix}/Data/CEC{data}_temp.xlsx"  # 显著性分析输出文件
 plot_file_template = "{file_prefix}/Plot/CEC{data}_temp.xlsx"  # 收敛图输出文件
 # Excel格式化设置
