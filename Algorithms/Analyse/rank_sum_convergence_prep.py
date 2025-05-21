@@ -45,7 +45,7 @@ file_order_22 = ['Benchmark1', 'Benchmark2', 'Benchmark3', 'Benchmark4', 'Benchm
 
 # 比较算法数据位置(该顺序决定了显著性分析和收敛图绘制的顺序，第一个为自己的算法)
 folder_paths_template = [
-    "Files/MultiTask/MGDMTO_s_CR0.7/CEC/CEC{data}/",
+    "Files/MultiTask/MGDMTO_s_CR0.9/CEC/CEC{data}/",
     "Files/MultiTask/MFEA/CEC/CEC{data}/",
     "Files/MultiTask/MFEA_AKT/CEC/CEC{data}/",
     "Files/MultiTask/MFDE/CEC/CEC{data}/",
@@ -58,7 +58,7 @@ folder_paths_template = [
     "Files/MultiTask/MMLMTO/CEC/CEC{data}/",
 ]
 # 对比算法名称(该顺序决定了显著性分析和收敛图绘制的顺序，须于上面一致)
-algos = ['MGDMTO_s_CR0.7', 'MFEA', 'MFEA_AKT','MFDE', 'MTGA', 'MKTDE', 'AEMTO', 'RLMFEA', 'EMTO_AI', 'BLKT_DE', 'MMLMTO']
+algos = ['MGDMTO_s_CR0.9', 'MFEA', 'MFEA_AKT','MFDE', 'MTGA', 'MKTDE', 'AEMTO', 'RLMFEA', 'EMTO_AI', 'BLKT_DE', 'MMLMTO']
 
 file_prefix = "Files/MultiTask/MGDMTO显著性分析/CEC"  # 文件前缀
 data_file_template = "{file_prefix}/Data/CEC{data}_temp.xlsx"  # 显著性分析输出文件
