@@ -32,6 +32,8 @@ def Initialization(Algo, Prob, Individual_Class, isPadding=True):
             # 染色体长度：统一为最大维度或保持原任务维度
             dim = max_dim if isPadding else task_dim
             individual.rnvec = np.random.rand(dim)
+            # 添加任务标签
+            individual.task_id = t
             population[t].append(individual)
 
         # 当前任务的种群适应度评估

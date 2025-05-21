@@ -15,3 +15,4 @@ class Individual:
         """
         self.rnvec = np.empty(0, dtype=float)  # 基因型，初始化为空NumPy数组
         self.obj = None  # 适应度，初始化为None
+        self.task_id = None  # 任务标识，表明个体属于哪个任务
