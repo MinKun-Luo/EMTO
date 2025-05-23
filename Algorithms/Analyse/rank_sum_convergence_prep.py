@@ -50,17 +50,17 @@ folder_paths_template = [
     "Files/MultiTask/MFEA_AKT/CEC/CEC{data}/",
     "Files/MultiTask/MFDE/CEC/CEC{data}/",
     "Files/MultiTask/MTGA/CEC/CEC{data}/",
-    "Files/MultiTask/MKTDE/CEC/CEC{data}/",
-    "Files/MultiTask/AEMTO/CEC/CEC{data}/",
-    "Files/MultiTask/RLMFEA/CEC/CEC{data}/",
-    "Files/MultiTask/EMTO_AI/CEC/CEC{data}/",
     "Files/MultiTask/BLKT_DE/CEC/CEC{data}/",
-    "Files/MultiTask/MMLMTO/CEC/CEC{data}/",
+    "Files/MultiTask/AEMTO/CEC/CEC{data}/",
+    "Files/MultiTask/EMTO_AI/CEC/CEC{data}/",
+    "Files/MultiTask/MKTDE/CEC/CEC{data}/",
+    "Files/MultiTask/RLMFEA/CEC/CEC{data}/",
+    "Files/MultiTask/NKTMTO/CEC/CEC{data}/",
 ]
 # 对比算法名称(该顺序决定了显著性分析和收敛图绘制的顺序，须于上面一致)
-algos = ['MGDMTO_s_CR0.9', 'MFEA', 'MFEA_AKT','MFDE', 'MTGA', 'MKTDE', 'AEMTO', 'RLMFEA', 'EMTO_AI', 'BLKT_DE', 'MMLMTO']
+algos = ['MGDMTO_s_CR0.9', 'MFEA', 'MFEA_AKT', 'MFDE', 'MTGA', 'BLKT_DE', 'AEMTO', 'EMTO_AI', 'MKTDE', 'RLMFEA', 'NKTMTO']
 
-file_prefix = "Files/MultiTask/MGDMTO显著性分析/CEC"  # 文件前缀
+file_prefix = "Files/MultiTask/MGDMTO与其他算法显著性分析/CEC"  # 文件前缀
 data_file_template = "{file_prefix}/Data/CEC{data}_temp.xlsx"  # 显著性分析输出文件
 plot_file_template = "{file_prefix}/Plot/CEC{data}_temp.xlsx"  # 收敛图输出文件
 # Excel格式化设置
